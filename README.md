@@ -1,2 +1,2 @@
 # Median
-A writers' WordPress Theme.
+The writers' WordPress Theme.
