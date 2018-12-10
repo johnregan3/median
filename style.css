@@ -3,7 +3,7 @@
  * Theme URI: https://github.com/johnregan3/median
  * Author: John Regan
  * Author URI: https://johnregan3.com
- * Description: The writer's WordPress Theme
+ * Description: The writer's WordPress Theme, optimized for blazing-fast load times and AMP ⚡ compatibility when the AMP plugin is installed (https://wordpress.org/plugins/amp/).
  * Version: 1.0.0
  * License: GPL 2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,8 +14,22 @@
  *
  * Notes:
  *
- * The primary CSS file can be found in /css/theme.css, and is enqueued in functions.php.
- *
  * Reminder: Do not edit the CSS in this theme!  If you'd like to make customizations,
  * please create a Child Theme: https://codex.wordpress.org/Child_Themes
+ *
+ * The primary CSS file can be found in /css/theme.min.css, and is enqueued in functions.php.
+ * The human-readable version is in /css/theme.css.
+ *
+ * Median uses Google Font's Montserrat and Martel.
+ *
+ * Median uses a custom Bootstrap package to handle CSS resets and grid:
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *
+ * @todo documentaiton notes:
+ *
+ * Features that require the AMP Plugin:
+ * Slide-in main menu
+ * Scroll to Top Button
  */

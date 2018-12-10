@@ -4,7 +4,7 @@
  *
  * @package Median
  * @since   1.0.0
- * @author  Fervor Marketing <dev@createfervor.com>
+ * @author  John Regan <john@johnregan3.com>
  */
 
 ?>
@@ -23,25 +23,8 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-		<?php // Primary Menu - Must be located here in the markup. ?>
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<amp-sidebar id="primary-menu" layout="nodisplay" side="left">
-				<button class="amp-close-image trigger-button" width="20" height="20" alt="close sidebar" on="tap:primary-menu.close" role="button" tabindex="0"><i class="fas fa-times"></i></button>
-				<?php get_search_form(); ?>
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<nav>
-						<?php wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-							'walker'         => new \Median\Menu_Walker(),
-						) );
-						?>
-					</nav>
-				<?php endif; ?>
-			</amp-sidebar>
-		<?php endif; ?>
 
-		<?php // Use `amp-position-observer` to start the animation when the user starts to scroll. ?>
-		<div id="scroll-to-marker">
-			<amp-position-observer on="enter:hideScrollTrigger.start; exit:showScrollTrigger.start" layout="nodisplay"></amp-position-observer>
-		</div>
+		<?php if ( true === median_amp_is_active() ) : ?>
+			<?php // Don't move this.  AMP requires the menu be the first element after the opening <body> tag. ?>
+			<?php get_template_part( 'template-parts/header', 'amp' ); ?>
+		<?php endif; ?>

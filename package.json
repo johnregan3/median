@@ -19,9 +19,8 @@
     "url": "https://github.com/johnregan3/median/issues"
   },
   "homepage": "https://johnregan3.com",
-  "dependencies": {
+  "devDependencies": {
     "del": "^3.0.0",
-    "eslint-config-wordpress": "^2.0.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.2",
@@ -39,5 +38,8 @@
     "gulp-watch": "5.0.0",
     "merge2": "^1.2.1",
     "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "eslint-plugin-wordpress": "^0.1.0"
   }
 }

@@ -1,18 +1,5 @@
-$red: #ae5251;
 $blue: #72abbf;
-$gold_lt: #bfb391;
-$gold_md: #a9955e;
-$gold_dk: darken( $gold_lt, 5 );
-$gray_dk: #a4a4a4;
-$gray_md: #c8c8c8;
-$gray : #e5e5e5;
-$gray_lt : #f8f8f8;
-$gray_xlt : #fafafa;
 $text: #514d47;
-
-$spacing_base: 1.4rem;
-
-$border: 1px solid $gray;
 
 $transition_color: color 200ms ease-in-out;
 $transition_bg: background 200ms ease-in-out;
@@ -20,7 +7,3 @@ $transition_bg: background 200ms ease-in-out;
 $font_sans: 'Montserrat', Arial, Helvetica, sans-serif;
 $font_serif: 'Martel', Times, 'Times New Roman', serif;
 $font_icon: "Font Awesome 5 Free", sans-serif;
-
-
-// Used for Bootstrap.
-$code-color: $red;

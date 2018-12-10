@@ -4,7 +4,7 @@
  *
  * @package Median
  * @since   1.0.0
- * @author  Fervor Marketing <dev@createfervor.com>
+ * @author  John Regan <john@johnregan3.com>
  */
 
 get_header();

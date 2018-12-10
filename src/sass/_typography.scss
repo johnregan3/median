@@ -1,11 +1,11 @@
 
 a {
-  color: $red;
+  color: #f00;
   transition: $transition_color;
   text-decoration: none;
 
   &:hover {
-    color: darken($red, 10);
+    color: darken(#f00, 10);
     transition: $transition_color;
   }
 }
@@ -33,9 +33,4 @@ h2 {
 
 h3 {
   font-size: 1.7rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }

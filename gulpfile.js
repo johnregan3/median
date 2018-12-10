@@ -5,12 +5,14 @@ var basePaths = {
 
 // Defining requirements
 var gulp         = require( 'gulp' ),
+    concat       = require( 'gulp-concat' ),
     plumber      = require( 'gulp-plumber' ),
     sass         = require( 'gulp-sass' ),
     rename       = require( 'gulp-rename' ),
     ignore       = require( 'gulp-ignore' ),
     sourcemaps   = require( 'gulp-sourcemaps' ),
     cleanCSS     = require( 'gulp-clean-css' ),
+    uglify       = require( 'gulp-uglify' ),
     gulpSequence = require( 'gulp-sequence' );
 
 /**
@@ -26,9 +28,8 @@ var gulp         = require( 'gulp' ),
  */
 gulp.task( 'watch', function() {
     gulp.watch( './src/sass/**/*.scss', [ 'styles' ] );
+    gulp.watch( './src/js/admin.js', [ 'admin-scripts' ] );
 } );
-
-
 
 /**
  * Run: gulp styles
@@ -38,7 +39,6 @@ gulp.task( 'watch', function() {
 gulp.task( 'styles', function( callback ) {
     gulpSequence( 'sass', 'minify-css' )( callback )
 } );
-
 
 /**
  * Run: gulp sass
@@ -54,9 +54,11 @@ gulp.task( 'sass', function() {
         }
     } ) )
     .pipe( sass() )
-    .pipe( gulp.dest( './css' ) );
+    .pipe( gulp.dest( './css' ) )
+    .on( 'end', function() {
+        console.log( 'sass task complete' );
+    } );
 } );
-
 
 /**
  * Run: gulp minify-css
@@ -75,5 +77,35 @@ gulp.task( 'minify-css', function() {
     } ) )
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( sourcemaps.write( './' ) )
-    .pipe( gulp.dest( './css/' ) );
+    .pipe( gulp.dest( './css/' ) )
+    .on( 'end', function() {
+        console.log( 'minify-css task complete' );
+    } );
+} );
+
+/**
+ * Run: gulp admin-scripts
+ *
+ * Minifies /src/js/admin.js into /js/admin.min.js.
+ */
+gulp.task( 'admin-scripts', function() {
+    return gulp.src( './src/js/admin.js' )
+    .pipe( sourcemaps.init( { loadMaps: true } ) )
+    .pipe( concat( 'admin.js' ) )
+    .pipe( gulp.dest( './js/' ) )
+    .pipe( uglify() )
+    .pipe( plumber( function( error ) {
+        console.error( error.message );
+        this.emit( 'end' );
+    } ) )
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe( plumber( function( error ) {
+        console.error( error.message );
+        this.emit( 'end' );
+    } ) )
+    .pipe( sourcemaps.write( './' ) )
+    .pipe( gulp.dest( './js/' ) )
+    .on( 'end', function() {
+        console.log( 'admin-scripts task complete' );
+    } );
 } );

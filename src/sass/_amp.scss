@@ -1,0 +1,35 @@
+.trigger-button {
+  width: 4rem;
+  height: 4rem;
+  color: $text;
+  border: 0;
+  background: #fff;
+  outline: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &--scroll-to {
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--menu {
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+  }
+}
+
+#scroll-to-marker {
+  position: absolute;
+  top: 10rem;
+  width: 0;
+  height: 0;
+}
