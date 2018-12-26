@@ -28,3 +28,5 @@
 			<?php // Don't move this.  AMP requires the menu be the first element after the opening <body> tag. ?>
 			<?php get_template_part( 'template-parts/header', 'amp' ); ?>
 		<?php endif; ?>
+
+		<?php get_template_part( 'template-parts/masthead' ); ?>

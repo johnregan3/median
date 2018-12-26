@@ -15,5 +15,5 @@
  * @return bool
  */
 function median_amp_is_active() {
-	return is_plugin_active( 'amp/amp.php' );
+	return ( is_admin() && is_plugin_active( 'amp/amp.php' ) );
 }

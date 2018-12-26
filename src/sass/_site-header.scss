@@ -1,0 +1,22 @@
+.site-header {
+  border-bottom: $border;
+  padding: 2rem 0;
+  margin-bottom: 6rem;
+
+  &__right {
+    text-align: right;
+  }
+
+  &__title {
+    font-family: $font-serif;
+
+    a {
+      color: $text;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
+

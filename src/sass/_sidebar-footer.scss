@@ -1,0 +1,15 @@
+.sidebar__footer {
+  background: $white_dk;
+  padding: 4rem 0;
+
+  .median-widget {
+    background : #fff;
+    border: $border_lt;
+    border-radius: 0.4rem;
+    padding: 2rem;
+    height: 100%;
+    &__title {
+      margin-bottom: 1rem;
+    }
+  }
+}

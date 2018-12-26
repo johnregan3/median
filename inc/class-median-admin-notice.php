@@ -42,7 +42,7 @@ class Median_Admin_Notice {
 	 *
 	 * @return void
 	 */
-	public function maybe_render_admin_notice() {
+	public static function maybe_render_admin_notice() {
 		if ( true !== self::is_admin_notice_active() ) {
 			return;
 		}
