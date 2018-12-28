@@ -9,8 +9,13 @@
 
 ?>
 
-<div class="row align-items-stretch align-content-stretch post-excerpt">
-	<div class="col-sm-<?php echo esc_attr( has_post_thumbnail() ? '9' : '12' ); ?>">
+<div class="row justify-content-center align-items-stretch align-content-stretch post-excerpt">
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="col-sm-3 col-md-4 col-lg-3">
+			<?php median_the_featured_image(); ?>
+		</div>
+	<?php endif; ?>
+	<div class="col-sm-<?php echo esc_attr( has_post_thumbnail() ? '9' : '12' ); ?> col-md-<?php echo esc_attr( has_post_thumbnail() ? '7' : '11' ); ?> col-lg-<?php echo esc_attr( has_post_thumbnail() ? '5' : '8' ); ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="post__header post__header--excerpt">
 				<h2 class="post__title post__title--excerpt"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
@@ -26,9 +31,4 @@
 			</div>
 		</article>
 	</div>
-	<?php if ( has_post_thumbnail() ) : ?>
-		<div class="col-sm-3">
-			<?php median_the_featured_image(); ?>
-		</div>
-	<?php endif; ?>
 </div>

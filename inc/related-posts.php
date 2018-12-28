@@ -160,7 +160,6 @@ function median_related_get_posts_by_args( $args = array() ) {
 
 	// Create the transient name.
 	$transient_name = median_related_transient_name( $args );
-
 	$posts = get_transient( $transient_name );
 
 	// Don't check if not empty, as the saved value may be an empty array.

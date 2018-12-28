@@ -1,5 +1,9 @@
 .post {
 
+  &__item {
+    padding-bottom: 6rem;
+  }
+
   &__title {
     font-size: 4.2rem;
     line-height: 1.04em;
@@ -16,7 +20,7 @@
 
     &--excerpt {
       font-size: 2.4rem;
-      line-height: 2.8em;
+      line-height: 2.8rem;
       margin-bottom: 0;
     }
   }
@@ -91,8 +95,6 @@
   }
 
   &--single {
-    max-width: 74rem;
-    margin: 0 auto;
 
     h2 {
       margin-bottom: 1rem;

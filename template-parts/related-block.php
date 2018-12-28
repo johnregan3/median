@@ -12,9 +12,10 @@
 ?>
 <div class="col-12 col-md related-posts__block">
 	<div class="related-posts__widget">
-		<h3 class="related-posts__widget__title"><?php the_title(); ?></h3>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php median_the_featured_image( get_the_ID(), 'sixteen-nine' ); ?>
 		<?php endif; ?>
+		<h3 class="related-posts__widget__title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+		<div class="related-posts__widget__content"><?php echo wp_kses_post( blaze_get_the_excerpt() ); ?></div>
 	</div>
 </div>

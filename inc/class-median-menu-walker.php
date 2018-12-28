@@ -34,13 +34,27 @@ class Median_Menu_Walker extends \Walker_Nav_Menu {
 
 	/**
 	 * @inheritdoc
-	 *
-	 * @todo use atts correctly.
 	 */
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
-		$title  = ! empty( $item->title ) ? strip_tags( $item->title ) : $item->title;
-		$output .= '<li><a href="' . esc_url( $item->url ) . '" title="' . esc_attr( $title ) . '">' . esc_attr( $item->title );
+		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes[] = 'menu-item-' . $item->ID;
+
+		$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
+
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+		$atts['title']  = ! empty( $item->title ) ? $item->title : '';
+		$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+		$atts['rel']    = ! empty( $item->rel ) ? $item->rel : '';
+
+		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+
+		$output .= '<li' . $id . $class_names . '><a href="' . esc_url( $item->url ) . '" title="' . esc_attr( $atts['title'] ) . '">' . esc_attr( $atts['title'] );
 	}
 
 	/**

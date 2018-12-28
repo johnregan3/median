@@ -6,11 +6,30 @@
     background: #fff;
     border: $border_lt;
     border-radius: 0.4rem;
-    padding: 2rem;
+    padding: 0 0 2rem;
     height: 100%;
+
+    .median-scaled-image {
+      border-top-right-radius: 0.4rem;
+      border-top-left-radius: 0.4rem;
+    }
+
     &__title {
       margin-bottom: 1rem;
+      padding: 2rem 2rem 0;
+
+      + .related-posts__widget__content {
+        padding-top: 1rem;
+      }
     }
+
+    &__content {
+      padding: 0 2rem;
+    }
+  }
+
+  + .related-posts {
+    border-top: 1px solid $gray_xxlt;
   }
 }
 

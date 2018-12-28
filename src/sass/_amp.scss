@@ -21,9 +21,15 @@
   }
 
   &--menu {
-    position: fixed;
-    top: 1rem;
-    right: 1.5rem;
+    font-size: 2rem;
+    padding-top: 0;
+    line-height: 1em;
+    height: auto;
+
+    .far,
+    &-close .far {
+      font-weight: 400;
+    }
   }
 }
 
@@ -32,4 +38,51 @@
   top: 10rem;
   width: 0;
   height: 0;
+}
+
+
+// Used only on AMP.
+#header-menu {
+  width: 500px;
+  background-color: #fff;
+  font-size: 2rem;
+
+  .search-form {
+    padding: 0 2rem;
+
+    input[type="search"] {
+      font-weight: normal;
+    }
+
+    input[type="submit"] {
+      display: block;
+    }
+  }
+
+  nav {
+    margin-bottom: 2rem;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        a {
+          font-size: 2rem;
+          display: inline-block;
+          padding: 1rem 0 1rem 2rem;
+          width: 100%;
+          color: $text;
+          border-bottom: 1px solid $gray_xlt;
+          &:hover {
+            color: $green;
+          }
+        }
+
+        &:first-child a {
+          border-top: 1px solid $gray_xlt;
+        }
+      }
+    }
+  }
 }

@@ -14,12 +14,6 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'post--single' ); ?>>
 			<header class="post__header">
 				<h1 class="post__title"><?php the_title(); ?></h1>
-				<div class="post__meta">
-					<div class="post__author">
-						<?php the_author_posts_link(); ?>
-					</div>
-					<time class="post__time" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
-				</div>
 			</header>
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php median_the_featured_image(); ?>

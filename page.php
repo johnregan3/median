@@ -18,15 +18,13 @@ get_header();
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'template-parts/post' ); ?>
+						<?php get_template_part( 'template-parts/page' ); ?>
 
 					<?php endwhile; ?>
 
 				<?php endif; ?>
 
 				<?php get_template_part( 'template-parts/sidebar-footer' ); ?>
-				<?php get_template_part( 'template-parts/recent' ); ?>
-				<?php get_template_part( 'template-parts/related' ); ?>
 
 		</div>
 	</main>

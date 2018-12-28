@@ -1,6 +1,7 @@
 .sidebar__footer {
   background: $white_dk;
   padding: 4rem 0;
+  border-top: 1px solid $gray_xxlt;
 
   .median-widget {
     background : #fff;
@@ -11,5 +12,9 @@
     &__title {
       margin-bottom: 1rem;
     }
+  }
+
+  + .related-posts {
+    border-top: 1px solid $gray_xxlt;
   }
 }

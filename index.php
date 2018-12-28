@@ -11,7 +11,7 @@ get_header();
 
 ?>
 
-	<main id="main" class="row">
+	<main id="main">
 		<div id="primary" class="container">
 
 				<?php if ( have_posts() ) : ?>

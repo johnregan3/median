@@ -15,5 +15,10 @@
  * @return bool
  */
 function median_amp_is_active() {
-	return ( is_admin() && is_plugin_active( 'amp/amp.php' ) );
+	if ( is_admin() && is_plugin_active( 'amp/amp.php' ) ) {
+		return true;
+	} elseif ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+		return true;
+	}
+	return false;
 }
