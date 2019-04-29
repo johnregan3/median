@@ -14,19 +14,15 @@ get_header();
 	<main id="main">
 		<div id="primary" class="container-fluid">
 
-				<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'template-parts/post' ); ?>
+					<?php get_template_part( 'template-parts/post' ); ?>
 
-					<?php endwhile; ?>
+				<?php endwhile; ?>
 
-				<?php endif; ?>
-
-				<?php get_template_part( 'template-parts/sidebar-footer' ); ?>
-				<?php get_template_part( 'template-parts/recent' ); ?>
-				<?php get_template_part( 'template-parts/related' ); ?>
+			<?php endif; ?>
 
 		</div>
 	</main>

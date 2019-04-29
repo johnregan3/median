@@ -1,58 +1,57 @@
 .nav {
-  &--header {
-    margin: 0;
-    padding: 3rem 0 0;
+    &--header {
+        margin: 0;
+        padding: 3rem 0 0;
 
-    li {
-      display: inline-block;
-      padding-right: 3rem;
-      text-transform: uppercase;
+        li {
+            display: inline-block;
+            padding-right: 3rem;
+            text-transform: uppercase;
 
-      &:last-child {
-        padding-right: 0;
-      }
+            &:last-child {
+                padding-right: 0;
+            }
 
-      a {
-        color: $text;
+            a {
+                color: $text;
 
-        &:hover {
-          color: $green;
+                &:hover {
+                    color: $primary;
+                }
+            }
         }
-      }
     }
-  }
 }
 
-
 .archive-pagination {
-  font-size: 0;
-  padding-left: 0;
+    font-size: 0;
+    padding-left: 0;
 
-  li {
-    display: inline-block;
+    li {
+        display: inline-block;
 
-    .page-link {
-      padding: 0.5rem 1rem 0;
+        .page-link {
+            padding: 0.5rem 1rem 0;
 
-      &--icon {
-        padding-right: 0.75rem;
-        padding-left: 0.75rem;
+            &--icon {
+                padding-right: 0.75rem;
+                padding-left: 0.75rem;
 
-        .fa {
-          margin-right: 0;
+                .fa {
+                    margin-right: 0;
+                }
+            }
         }
 
-        &--forward {
-          &:hover {
+        a {
+            color: $gray_text;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1.6rem;
 
-          }
+            &:hover {
+                color: $primary;
+            }
         }
-      }
     }
-
-    a {
-      display: inline-block;
-      font-size: 1.6rem;
-    }
-  }
 }

@@ -24,8 +24,6 @@ get_header();
 
 				<?php endif; ?>
 
-				<?php get_template_part( 'template-parts/sidebar-footer' ); ?>
-
 		</div>
 	</main>
 <?php

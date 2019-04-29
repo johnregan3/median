@@ -1,114 +1,118 @@
 label {
-  font-family: $font-sans;
-  font-weight: 500;
+    font-family: $font-sans;
+    font-weight: 500;
 }
 
 select,
 textarea,
-input[type="email"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="week"],
-input[type="url"] {
-  display: block;
-  width: 100%;
-  padding: 0.7rem;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  color: $text;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid $gray_xlt;
-  box-shadow: 0 1px 4px $gray_xxlt;
-  border-radius: 0.4rem;
-  font-family: $font-sans;
-}
-
-input[type="submit"],
-.btn-primary,
-.button {
-  border: 1px solid $green;
-  color: $green;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $green;
-    background: #fff;
-    border-color: darken( $green, 10% );
-    transition: border-color 200ms ease-in-out;
-  }
-
+input[type='email'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='week'],
+input[type='url'] {
+    display: block;
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $text;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid $gray_xlt;
+    box-shadow: 0 1px 4px $gray_xxlt;
+    border-radius: 0.4rem;
+    font-family: $font-sans;
 }
 
 button,
 .button,
 .btn,
 .btn-secondary,
-input[type="button"],
-input[type="submit"] {
-  border-radius: 0.4rem;
-  background: #fff;
-  font-family: $font-sans;
-  border: 1px solid $gray_lt;
-  color: $gray_text;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  font-weight: 400;
-  transition: color 200ms ease-in-out, border-color 200ms ease-in-out;
-  padding: 0.8rem 1.6rem;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: rgba( 0, 0, 0, 0.68 );
+input[type='button'],
+input[type='submit'] {
+    border-radius: 0.4rem;
     background: #fff;
-    border-color: $gray_text;
+    font-family: $font-sans;
+    border: 1px solid $gray_lt;
+    color: $gray_text;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-weight: 400;
     transition: color 200ms ease-in-out, border-color 200ms ease-in-out;
-  }
+    padding: 0.8rem 1.6rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: rgba(0, 0, 0, 0.68);
+        background: #fff;
+        border-color: $gray_text;
+        transition: color 200ms ease-in-out, border-color 200ms ease-in-out;
+    }
+}
+
+.btn-primary {
+    border: 1px solid $primary;
+    color: $primary;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $primary;
+        background: #fff;
+        border-color: darken($primary, 10%);
+        transition: border-color 200ms ease-in-out;
+    }
+}
+
+input[type='submit'] {
+    &:hover {
+        border-color: $primary;
+        color: $primary;
+    }
 }
 
 .form-small {
-  button,
-  .button,
-  .btn,
-  .btn-primary,
-  .btn-secondary,
-  input[type="button"],
-  input[type="submit"],
-  input[type="email"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="week"],
-  input[type="url"] {
-    font-size: 1.4rem;
-    line-height: 1em;
-    padding: 0.3rem 1rem;
-  }
+    button,
+    .button,
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    input[type='button'],
+    input[type='submit'],
+    input[type='email'],
+    input[type='date'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    input[type='month'],
+    input[type='number'],
+    input[type='password'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='time'],
+    input[type='week'],
+    input[type='url'] {
+        font-size: 1.4rem;
+        line-height: 1em;
+        padding: 0.3rem 1rem;
+    }
 
-  button,
-  .button,
-  .btn,
-  .btn-primary,
-  .btn-secondary,
-  input[type="button"],
-  input[type="submit"] {
-    padding: 0.4rem 1rem;
-  }
+    button,
+    .button,
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    input[type='button'],
+    input[type='submit'] {
+        padding: 0.4rem 1rem;
+    }
 }

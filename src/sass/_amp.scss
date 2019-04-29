@@ -1,88 +1,138 @@
 .trigger-button {
-  width: 4rem;
-  height: 4rem;
-  color: $text;
-  border: 0;
-  background: #fff;
-  outline: 0;
-  cursor: pointer;
-
-  &:focus {
+    width: 4rem;
+    height: 4rem;
+    color: $text;
+    background: #fff;
     outline: 0;
-  }
+    cursor: pointer;
+    padding: 0.8rem;
+    border: 1px solid $gray_lt;
+    transition: all 200ms ease-in-out;
 
-  &--scroll-to {
-    position: fixed;
-    bottom: 1rem;
-    right: 1.5rem;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &--menu {
-    font-size: 2rem;
-    padding-top: 0;
-    line-height: 1em;
-    height: auto;
-
-    .far,
-    &-close .far {
-      font-weight: 400;
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: $primary;
+        transition: border-color 200ms ease-in-out;
     }
-  }
+
+    &--scroll-to {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &--menu {
+        font-size: 2rem;
+        line-height: 1em;
+        position: fixed;
+        right: 1rem;
+        top: 1.3rem;
+        z-index: 9999;
+
+        .far,
+        &-close .far {
+            font-weight: 400;
+        }
+    }
 }
 
 #scroll-to-marker {
-  position: absolute;
-  top: 10rem;
-  width: 0;
-  height: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
 }
-
 
 // Used only on AMP.
 #header-menu {
-  width: 500px;
-  background-color: #fff;
-  font-size: 2rem;
+    width: 500px;
+    background-color: $white_dk;
+    font-size: 2rem;
+    border-left: 1px solid $gray_lt;
+    transition-duration: 500ms;
 
-  .search-form {
-    padding: 0 2rem;
-
-    input[type="search"] {
-      font-weight: normal;
+    .trigger-button--menu-close {
+        margin-top: 1.4rem;
+        margin-right: 1rem;
+        float: right;
     }
 
-    input[type="submit"] {
-      display: block;
+    h3 {
+        padding: 2rem 2rem 2.3rem;
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: 500;
     }
-  }
 
-  nav {
-    margin-bottom: 2rem;
+    .copyright {
+        text-align: right;
+        padding-right: 2rem;
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: $gray_text;
+    }
 
     ul {
-      padding: 0;
-      margin: 0;
+        padding: 0;
+        margin: 0 0 4rem;
 
-      li {
-        a {
-          font-size: 2rem;
-          display: inline-block;
-          padding: 1rem 0 1rem 2rem;
-          width: 100%;
-          color: $text;
-          border-bottom: 1px solid $gray_xlt;
-          &:hover {
-            color: $green;
-          }
-        }
+        &.ul {
+            &--lines {
+                li {
+                    a {
+                        font-size: 2rem;
+                        display: inline-block;
+                        padding: 1rem 0 1rem 2rem;
+                        width: 100%;
+                        color: $text;
+                        border-bottom: 1px solid $gray_xlt;
+                        background: #fff;
+                        font-weight: 300;
 
-        &:first-child a {
-          border-top: 1px solid $gray_xlt;
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+
+                    &:first-child a {
+                        border-top: 1px solid $gray_xlt;
+                    }
+                }
+            }
+
+            &--social {
+                text-align: center;
+
+                li {
+                    display: inline-block;
+
+                    a {
+                        color: $gray_text;
+
+                        &.ul--social {
+                            &--twitter {
+                                &:hover {
+                                    color: $color_twitter;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
+}
+
+.admin-bar {
+    .trigger-button--menu {
+        top: 5.7rem;
+
+        @include media-breakpoint-up(md) {
+            top: 4.2rem;
+        }
+    }
 }

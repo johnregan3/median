@@ -79,15 +79,18 @@ function median_the_featured_image( $post_id = 0, $classes = '' ) {
 	if ( empty( $img_id ) ) {
 		return;
 	}
+
+	$url = wp_get_attachment_image_url( $img_id, 'median-amp-img' );
+
 	$image_alt   = get_post_meta( $img_id, '_wp_attachment_image_alt', true );
 	$image_title = get_post_meta( $img_id, '_wp_attachment_image_title', true );
 	$image_alt   = ( ! empty( $image_alt ) ) ? $image_alt : get_the_title( $post_id );
 	$image_title = ( ! empty( $image_title ) ) ? $image_title : get_the_title( $post_id );
 
-	median_scaled_image( get_the_post_thumbnail_url( $post_id ), get_permalink( $post_id ), array(
+	median_scaled_image( $url, get_permalink( $post_id ), array(
 		'alt'   => $image_alt,
 		'title' => $image_title,
-		'classes' => 'median-featured-image ' . $classes,
+		'classes' => 'median-featured-image sixteen-nine alignwide' . $classes,
 	) );
 
 }

@@ -8,13 +8,12 @@
  */
 
 // Scroll To Top Button.
-// @todo a11y the buttons.
 
 ?>
 
 <?php // The Scroll to Top Button markup.  ?>
-<button id="scroll-to-button" on="tap:scroll-to-marker.scrollTo(duration=200)" class="trigger-button trigger-button--scroll-to">
-	<i class="fas fa-chevron-up"></i></button>
+<button id="scroll-to-button" on="tap:scroll-to-marker.scrollTo(duration=400)" class="trigger-button trigger-button--scroll-to">
+	<i class="fas fa-chevron-up" aria-hidden="true" title="<?php esc_html_e( 'Scroll to top', 'median' ); ?>"><span class="sr-only"><?php esc_html_e( 'Scroll to top', 'median' ); ?></span></i></button>
 
 <?php // Show the Button. ?>
 <amp-animation id="showScrollTrigger" layout="nodisplay">

@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Excerpt Template Part
+ * Single Page Template Part
  *
  * @package Median
  * @since   1.0.0
@@ -10,7 +10,7 @@
 ?>
 
 <div class="row justify-content-center post__item">
-	<div class="col-12 col-md-8">
+	<div class="col-12 col-md-10 col-xl-6">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'post--single' ); ?>>
 			<header class="post__header">
 				<h1 class="post__title"><?php the_title(); ?></h1>

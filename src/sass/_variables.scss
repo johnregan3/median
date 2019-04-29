@@ -1,19 +1,23 @@
 $green: #00ab6c;
-$green_lt: transparentize( $green, 0.3 );
-$green_xlt: transparentize( $green, 0.8 );
-$gray_lt: rgba( 0, 0, 0, 0.15 );
-$gray_text: rgba( 0, 0, 0, 0.54 );
-$gray_xlt: rgba( 0, 0, 0, 0.07 );
-$gray_xxlt: rgba( 0, 0, 0, 0.03 );
+$blue: #3876bd;
+
+$primary: $blue;
+$primary_lt: transparentize($primary, 0.3);
+$primary_xlt: transparentize($primary, 0.8);
+$gray_lt: rgba(0, 0, 0, 0.15);
+$gray_text: rgba(0, 0, 0, 0.54);
+$gray_xlt: rgba(0, 0, 0, 0.07);
+$gray_xxlt: rgba(0, 0, 0, 0.03);
 $white_dk: #fafafa;
-$text: transparentize( #000, 0.16 );
+$text: transparentize(#000, 0.16);
+
+$color_twitter: #1da1f2;
 
 $transition_color: color 200ms ease-in-out;
 $transition_bg: background 200ms ease-in-out;
 
 $border: 1px solid $gray_lt;
 $border_lt: 1px solid $gray_xlt;
-
 $font_sans: 'Signika', Arial, Helvetica, sans-serif;
 $font_serif: 'Martel', Times, 'Times New Roman', serif;
-$font_icon: "Font Awesome 5 Free", sans-serif;
+$font_icon: 'Font Awesome 5 Free', sans-serif;

@@ -10,11 +10,12 @@
  */
 
 include get_stylesheet_directory() . '/inc/helpers.php';
-include get_stylesheet_directory() . '/inc/class-median-admin-notice.php';
-// include get_stylesheet_directory() . '/inc/class-median-amp.php';
 include get_stylesheet_directory() . '/inc/class-median-menu-walker.php';
 include get_stylesheet_directory() . '/inc/template-tags.php';
 include get_stylesheet_directory() . '/inc/related-posts.php';
+include get_stylesheet_directory() . '/inc/get-tags.php';
+include get_stylesheet_directory() . '/inc/blocks.php';
+include get_stylesheet_directory() . '/inc/contact-form.php';
 
 /**
  * Initialize the theme.
@@ -23,6 +24,7 @@ include get_stylesheet_directory() . '/inc/related-posts.php';
  * @action after_setup_theme.
  */
 function median_init() {
+	add_image_size( 'median-amp-img', 1200, 1600 );
 	add_theme_support( 'menus' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'align-wide' );
@@ -36,13 +38,7 @@ function median_init() {
 	load_theme_textdomain( 'median', get_template_directory() . '/languages' );
 
 	// Register the navigation menus.
-	register_nav_menus( array(
-		'header' => __( 'Header Menu', 'median' ),
-		'footer' => __( 'Footer Menu', 'median' ),
-	) );
-
-	// Initialize the AMP Plugin Admin Notice feature.
-	Median_Admin_Notice::init();
+	register_nav_menu( 'header', __( 'Header Menu', 'median' ) );
 }
 
 add_action( 'after_setup_theme', 'median_init' );
@@ -50,52 +46,24 @@ add_action( 'after_setup_theme', 'median_init' );
 /**
  * Enqueue scripts.
  *
- * @todo   remove rand().
- *
  * @since  1.0.0
  * @action wp_enqueue_scripts
  */
 function median_enqueue() {
 	// Register and Enqueue Google Fonts.
-	wp_register_style( 'median-google-fonts', 'https://fonts.googleapis.com/css?family=Signika:300,400,600|Martel:400,500,700' );
+	wp_register_style( 'median-google-fonts', 'https://fonts.googleapis.com/css?family=Signika:300,400,600|Martel:400,600,700' );
 	wp_enqueue_style( 'median-google-fonts' );
 
 	// Register Bootstrap Reset and Grid.
-	wp_register_style( 'median-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), rand( 0, 99999 ) );
+	wp_register_style( 'median-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), '1.0.0' );
 
 	// Register and Enqueue Theme styles.
-	wp_register_style( 'median-styles', get_stylesheet_directory_uri() . '/css/theme.min.css', array( 'median-bootstrap' ), rand( 0, 99999 ) );
+	wp_register_style( 'median-styles', get_stylesheet_directory_uri() . '/css/theme.min.css', array( 'median-bootstrap' ), '1.0.0' );
 	wp_enqueue_style( 'median-styles' );
 
 }
 
 add_action( 'wp_enqueue_scripts', 'median_enqueue' );
-
-function jr3_enqueue_gutenberg() {
-	wp_register_style( 'jr3-gutenberg', get_stylesheet_directory_uri() . '/css/editor.css' );
-	wp_enqueue_style( 'jr3-gutenberg' );
-}
-add_action( 'enqueue_block_editor_assets', 'jr3_enqueue_gutenberg' );
-
-/**
- * Register sidebars.
- *
- * @since  1.0.0
- * @action widgets_init
- */
-function median_register_sidebars() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'median' ),
-		'id'            => 'sidebar-footer',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget col-12 col-md %2$s"><div class="median-widget">',
-		'after_widget'  => '</div></aside>',
-		'before_title'  => '<h3 class="widget-title median-widget__title">',
-		'after_title'   => '</h3>',
-	) );
-}
-
-add_action( 'widgets_init', 'median_register_sidebars' );
 
 /**
  * Customize the excerpt "More" text.
@@ -106,9 +74,7 @@ add_action( 'widgets_init', 'median_register_sidebars' );
  * @return string The new "More" string.
  */
 function median_excerpt_more() {
-	global $post;
-
-	return '<a href="' . get_permalink( $post->ID ) . '" title="' . esc_html__( 'Read More', 'median' ) . '">&hellip;</a>';
+	return '&hellip;';
 }
 
 add_filter( 'excerpt_more', 'median_excerpt_more' );
@@ -125,4 +91,4 @@ function median_excerpt_length() {
 	return 40;
 }
 
-add_filter( 'excerpt_length', 'median_excerpt_length', 99999 );
+add_filter( 'excerpt_length', 'median_excerpt_length', 99 );

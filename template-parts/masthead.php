@@ -14,7 +14,7 @@
 <header id="#masthead" class="site-header">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 col-md-4 site-header__left">
+			<div class="col-12 site-header__left">
 				<h1 class="site-header__title">
 					<a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</h1>
@@ -25,7 +25,7 @@
 					<?php get_search_form(); ?>
 				<?php elseif ( ( true === median_amp_is_active() ) && ( true === has_nav_menu( 'header' ) ) ) : ?>
 					<button on="tap:header-menu.toggle" class="trigger-button trigger-button--menu">
-						<i aria-hidden class="far fa-bars" title="<?php esc_html_e( 'Open menu', 'median' ); ?>"><span class="sr-only"><?php esc_html_e( 'Open Menu', 'median' ); ?></span></i>
+						<i aria-hidden="false" class="far fa-bars" title="<?php esc_html_e( 'Open menu', 'median' ); ?>"><span class="sr-only"><?php esc_html_e( 'Open Menu', 'median' ); ?></span></i>
 					</button>
 				<?php endif; ?>
 			</div>

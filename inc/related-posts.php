@@ -22,7 +22,7 @@
  * @return array An array of posts.
  */
 
-function median_get_related_posts( $post_id = 0, $args = array(), $count = 3 ) {
+function median_get_related_posts( $post_id = 0, $args = array(), $count = 5 ) {
 
 	// Make sure we have a good post_id.  If not, grab the current post.
 	if ( empty( $post_id ) || ! is_numeric( $post_id ) ) {
@@ -34,7 +34,7 @@ function median_get_related_posts( $post_id = 0, $args = array(), $count = 3 ) {
 		return array();
 	}
 
-	$transient_name = median_related_transient_name( $args );
+	$transient_name = 'median_related__' . $post_id;
 	$output         = get_transient( $transient_name );
 
 	// Don't check if not empty, as the saved value may be an empty array.
@@ -54,7 +54,8 @@ function median_get_related_posts( $post_id = 0, $args = array(), $count = 3 ) {
 	 */
 	$args = wp_parse_args( $args, array(
 		'posts_per_page' => $count,
-		'orderby'        => 'title',
+		'orderby'        => 'rand',
+		'post__not_in'    => $post_id,
 		'post_type'      => get_post_type( $post_id ),
 		'post_status'    => 'publish',
 		'author'         => get_post_field( 'post_author', $post_id ),
